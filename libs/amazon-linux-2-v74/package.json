@@ -1,0 +1,32 @@
+{
+  "name": "@libphp/amazon-linux-2-v74",
+  "version": "0.0.6",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "homepage": "https://github.com/juicyfx/libphp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juicyfx/libphp.git"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.47",
+    "jest": "^26.0.1",
+    "typescript": "^3.9.5"
+  },
+  "files": [
+    "dist",
+    "native"
+  ],
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ]
+  },
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "prepublishOnly": "tsc"
+  }
+}

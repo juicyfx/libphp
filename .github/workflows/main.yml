@@ -1,0 +1,26 @@
+name: Main workflow
+
+on: [push, pull_request]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Dependencies
+        run: |
+          npm install
+          npx lerna bootstrap
+
+      - name: Build
+        run: npx lerna run build
+
+      - name: Tests
+        run: npx lerna run test

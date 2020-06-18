@@ -1,0 +1,16 @@
+{
+  "name": "@libphp/amazon-linux-2-v73",
+  "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/juicyfx/libphp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juicyfx/libphp.git"
+  },
+  "files": [
+    "native"
+  ],
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
