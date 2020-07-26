@@ -70,6 +70,7 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/json.so > ${DIST_PHP_MODULES_PATH}/json.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/lua.so > ${DIST_PHP_MODULES_PATH}/lua.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/mbstring.so > ${DIST_PHP_MODULES_PATH}/mbstring.so
+	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/mongodb.so > ${DIST_PHP_MODULES_PATH}/mongodb.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/msgpack.so > ${DIST_PHP_MODULES_PATH}/msgpack.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/mysqli.so > ${DIST_PHP_MODULES_PATH}/mysqli.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/mysqlnd.so > ${DIST_PHP_MODULES_PATH}/mysqlnd.so
@@ -149,6 +150,7 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libzstd.so.1 > ${DIST_LIB_PATH}/libzstd.so.1
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/liblzf.so.1 > ${DIST_LIB_PATH}/liblzf.so.1
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/liblz4.so.1 > ${DIST_LIB_PATH}/liblz4.so.1
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libsnappy.so.1 > ${DIST_LIB_PATH}/libsnappy.so.1
 
 	# Remove temporary PHP container
 	docker rm --force ${DOCKER_CONTAINER} || true
