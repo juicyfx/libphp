@@ -1,4 +1,4 @@
-FROM amazonlinux:2.0.20191016.0-with-sources
+FROM amazonlinux:2.0.20200602.0-with-sources
 
 ENV PHP=php74
 
@@ -32,6 +32,7 @@ RUN yum install -y \
         ${PHP}-php-mysqlnd \
         ${PHP}-php-opcache \
         ${PHP}-php-pdo \
+        ${PHP}-php-pecl-mongodb \
         ${PHP}-php-phalcon \
         ${PHP}-php-pgsql \
         ${PHP}-php-protobuf \
@@ -73,6 +74,7 @@ RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/i
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/json.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/lua.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/mbstring.so
+RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/mongodb.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/msgpack.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/mysqli.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/mysqlnd.so
