@@ -12,7 +12,36 @@
 
 ## ⚙️ Usage
 
-@todo
+This repository contains libraries for building PHP layers in clouds. You can build your package/library based on this libraries.
+
+For example `@libphp/amazon-linux-2-v74`. Used in [`vercel-php`](https://github.com/juicyfx/vercel-php) a PHP runtime for [Vercel](https://vercel.com) platform.
+
+```js
+import * as php74 from "@libphp/amazon-linux-2-v74";
+
+// @libphp/amazon-linux-2-v74
+// ├── dist
+// │   └── *.js
+// └── native
+//     ├── lib
+//     │   └── * (shared libs)
+//     └── php
+//         ├── modules
+//         │   └── *.so (php modules)
+//         ├── composer
+//         ├── php.ini
+//         ├── php
+//         ├── php-cgi
+//         ├── php-fpm
+//         └── php-fpm.ini
+
+php74.getRoot(); // root folder
+php74.getComposer(); // composer bin
+php74.getPhpFiles(); // list of all PHP files
+php74.getPhpModulesFiles(); // list of all PHP modules
+php74.getSharedLibsFiles(); // list of all shared libs
+php74.getFiles(); // list of all related files
+```
 
 ## 📝 License
 
