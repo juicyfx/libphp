@@ -12,7 +12,7 @@
 
 ## ⚙️ Usage
 
-This repository contains libraries for building PHP layers in clouds. You can build your package/library based on this libraries.
+This repository contains libraries for building PHP layers in clouds (AWS, ...). You can build your package/library based on these libraries.
 
 For example `@libphp/amazon-linux-2-v74`. Used in [`vercel-php`](https://github.com/juicyfx/vercel-php) a PHP runtime for [Vercel](https://vercel.com) platform.
 
