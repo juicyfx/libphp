@@ -8,8 +8,8 @@ test-runtime:
 	docker run \
 		-it \
 		--rm \
-		-v $(CURDIR)/../libs/amazon-linux-2-v74/native/php:/var/task/php \
-		-v $(CURDIR)/../libs/amazon-linux-2-v74/native/lib:/var/task/lib/ \
+		-v $(CURDIR)/../libs/amazon-linux-2-v80/native/php:/var/task/php \
+		-v $(CURDIR)/../libs/amazon-linux-2-v80/native/lib:/var/task/lib/ \
 		-w /var/task \
 		--entrypoint /bin/bash \
 		-p 8000:8000 \
@@ -19,8 +19,8 @@ test-libs:
 	docker run \
 		-it \
 		--rm \
-		-v $(CURDIR)/../libs/amazon-linux-2-v74/native/php:/var/task/php \
-		-v $(CURDIR)/../libs/amazon-linux-2-v74/native/lib:/var/task/lib/ \
+		-v $(CURDIR)/../libs/amazon-linux-2-v80/native/php:/var/task/php \
+		-v $(CURDIR)/../libs/amazon-linux-2-v80/native/lib:/var/task/lib/ \
 		-v $(CURDIR):/srv \
 		-w /srv \
 		--entrypoint /bin/bash \
