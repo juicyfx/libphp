@@ -113,10 +113,10 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libexslt.so.0 > ${DIST_LIB_PATH}/libexslt.so.0
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libgcrypt.so.11 > ${DIST_LIB_PATH}/libgcrypt.so.11
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libgpg-error.so.0 > ${DIST_LIB_PATH}/libgpg-error.so.0
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicudata.so.62 > ${DIST_LIB_PATH}/libicudata.so.62
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicui18n.so.62 > ${DIST_LIB_PATH}/libicui18n.so.62
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuio.so.62 > ${DIST_LIB_PATH}/libicuio.so.62
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuuc.so.62 > ${DIST_LIB_PATH}/libicuuc.so.62
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicudata.so.65 > ${DIST_LIB_PATH}/libicudata.so.65
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicui18n.so.65 > ${DIST_LIB_PATH}/libicui18n.so.65
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuio.so.65 > ${DIST_LIB_PATH}/libicuio.so.65
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuuc.so.65 > ${DIST_LIB_PATH}/libicuuc.so.65
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libidn2.so.0 > ${DIST_LIB_PATH}/libidn2.so.0
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/liblber-2.4.so.2 > ${DIST_LIB_PATH}/liblber-2.4.so.2
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libldap-2.4.so.2 > ${DIST_LIB_PATH}/libldap-2.4.so.2
