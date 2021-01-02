@@ -1,4 +1,4 @@
-FROM amazonlinux:2.0.20200602.0-with-sources
+FROM 2.0.20201218.1-with-sources
 
 ENV PHP=php74
 
