@@ -4,7 +4,7 @@ ENV PHP=php80
 
 RUN yum install -y \
         https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-        https://rpms.remirepo.net/enterprise/remi-release-7.rpm \
+        http://rpms.remirepo.net/enterprise/remi-release-7.rpm \
         yum-utils \
         epel-release \
         curl
@@ -37,7 +37,7 @@ RUN yum install -y \
         # ${PHP}-php-phalcon \
         ${PHP}-php-pgsql \
         # ${PHP}-php-protobuf \
-        ${PHP}-php-psr \
+        # ${PHP}-php-psr \
         ${PHP}-php-redis \
         ${PHP}-php-runkit7 \
         ${PHP}-php-soap \
@@ -87,7 +87,7 @@ RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/p
 # RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/protobuf.so
 # RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/phalcon.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/phar.so
-RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/psr.so
+# RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/psr.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/redis.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/runkit7.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/simplexml.so

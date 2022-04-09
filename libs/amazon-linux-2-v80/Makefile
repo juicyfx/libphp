@@ -75,7 +75,7 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/mysqli.so > ${DIST_PHP_MODULES_PATH}/mysqli.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/mysqlnd.so > ${DIST_PHP_MODULES_PATH}/mysqlnd.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/opcache.so > ${DIST_PHP_MODULES_PATH}/opcache.so
-	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/pdo.so > ${DIST_PHP_MODULES_PATH}/pdo.so
+	# docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/pdo.so > ${DIST_PHP_MODULES_PATH}/pdo.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/pdo_mysql.so > ${DIST_PHP_MODULES_PATH}/pdo_mysql.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/pdo_pgsql.so > ${DIST_PHP_MODULES_PATH}/pdo_pgsql.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /opt/remi/php${DIST_PHP}/root/usr/lib64/php/modules/pdo_sqlite.so > ${DIST_PHP_MODULES_PATH}/pdo_sqlite.so
@@ -113,10 +113,10 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libexslt.so.0 > ${DIST_LIB_PATH}/libexslt.so.0
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libgcrypt.so.11 > ${DIST_LIB_PATH}/libgcrypt.so.11
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libgpg-error.so.0 > ${DIST_LIB_PATH}/libgpg-error.so.0
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicudata.so.65 > ${DIST_LIB_PATH}/libicudata.so.65
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicui18n.so.65 > ${DIST_LIB_PATH}/libicui18n.so.65
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuio.so.65 > ${DIST_LIB_PATH}/libicuio.so.65
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuuc.so.65 > ${DIST_LIB_PATH}/libicuuc.so.65
+	# docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicudata.so.65 > ${DIST_LIB_PATH}/libicudata.so.65
+	# docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicui18n.so.65 > ${DIST_LIB_PATH}/libicui18n.so.65
+	# docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuio.so.65 > ${DIST_LIB_PATH}/libicuio.so.65
+	# docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuuc.so.65 > ${DIST_LIB_PATH}/libicuuc.so.65
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libidn2.so.0 > ${DIST_LIB_PATH}/libidn2.so.0
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/liblber-2.4.so.2 > ${DIST_LIB_PATH}/liblber-2.4.so.2
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libldap-2.4.so.2 > ${DIST_LIB_PATH}/libldap-2.4.so.2
