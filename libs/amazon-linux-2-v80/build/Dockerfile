@@ -33,6 +33,7 @@ RUN yum install -y \
         ${PHP}-php-mysqlnd \
         ${PHP}-php-opcache \
         ${PHP}-php-pdo \
+        ${PHP}-php-pecl-geoip \
         ${PHP}-php-pecl-mongodb \
         # ${PHP}-php-phalcon \
         ${PHP}-php-pgsql \
@@ -47,7 +48,8 @@ RUN yum install -y \
         ${PHP}-php-tokenizer \
         ${PHP}-php-uuid \
         ${PHP}-php-xml \
-        ${PHP}-php-xmlrpc
+        ${PHP}-php-xmlrpc \
+        ${PHP}-php-zip 
 
 RUN curl -sS https://getcomposer.org/installer | ${PHP} -- --install-dir=/usr/bin --filename=composer
 
@@ -67,6 +69,7 @@ RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/d
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/exif.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/fileinfo.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/ftp.so
+RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/geoip.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/gettext.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/grpc.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/iconv.so
@@ -104,6 +107,7 @@ RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/x
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/xmlrpc.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/xmlwriter.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/xsl.so
+RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/zip.so
 
 WORKDIR /var/task
 
