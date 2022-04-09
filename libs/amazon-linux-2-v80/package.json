@@ -1,6 +1,6 @@
 {
   "name": "@libphp/amazon-linux-2-v80",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "./dist/index.js",
   "homepage": "https://github.com/juicyfx/libphp",
