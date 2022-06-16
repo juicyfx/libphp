@@ -9,7 +9,7 @@
     "url": "https://github.com/juicyfx/libphp.git"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^18.0.0",
     "jest": "^27.5.1",
     "typescript": "^4.6.2"
   },
