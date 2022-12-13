@@ -1,4 +1,4 @@
-FROM amazonlinux:2.0.20201218.1-with-sources
+FROM amazonlinux:2.0.20220912.1-with-sources
 
 ENV PHP=php81
 
@@ -9,7 +9,7 @@ RUN yum install -y \
         epel-release \
         curl
 
-RUN yum-config-manager --enable remi-${PHP}
+RUN yum-config-manager --enable remi,remi-${PHP},remi-safe
 RUN yum update -y && yum upgrade -y
 RUN yum -y install patchelf
 
@@ -24,6 +24,7 @@ RUN yum install -y \
         ${PHP}-php-grpc \
         ${PHP}-php-imap \
         ${PHP}-php-igbinary \
+        ${PHP}-php-pecl-imagick \
         ${PHP}-php-intl \
         ${PHP}-php-json \
         # ${PHP}-php-lua \
@@ -49,7 +50,7 @@ RUN yum install -y \
         ${PHP}-php-uuid \
         ${PHP}-php-xml \
         ${PHP}-php-xmlrpc \
-        ${PHP}-php-zip 
+        ${PHP}-php-zip
 
 RUN curl -sS https://getcomposer.org/installer | ${PHP} -- --install-dir=/usr/bin --filename=composer
 
@@ -73,6 +74,7 @@ RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/g
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/gettext.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/grpc.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/iconv.so
+RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/imagick.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/imap.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/igbinary.so
 RUN patchelf --set-rpath '$ORIGIN' /opt/remi/${PHP}/root/usr/lib64/php/modules/intl.so
