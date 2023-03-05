@@ -14,12 +14,12 @@
 
 This repository contains libraries for building PHP layers in clouds (AWS, ...). You can build your package/library based on these libraries.
 
-For example `@libphp/amazon-linux-2-v81`. Used in [`vercel-php`](https://github.com/juicyfx/vercel-php) a PHP runtime for [Vercel](https://vercel.com) platform.
+For example `@libphp/amazon-linux-2-v82`. Used in [`vercel-php`](https://github.com/juicyfx/vercel-php) a PHP runtime for [Vercel](https://vercel.com) platform.
 
 ```js
-import * as php80 from "@libphp/amazon-linux-2-v80";
+import * as php from "@libphp/amazon-linux-2-v80";
 
-// @libphp/amazon-linux-2-v81
+// @libphp/amazon-linux-2-v82
 // ├── dist
 // │   └── *.js
 // └── native
@@ -35,12 +35,12 @@ import * as php80 from "@libphp/amazon-linux-2-v80";
 //         ├── php-fpm
 //         └── php-fpm.ini
 
-php80.getRoot(); // root folder
-php80.getComposer(); // composer bin
-php80.getPhpFiles(); // list of all PHP files
-php80.getPhpModulesFiles(); // list of all PHP modules
-php80.getSharedLibsFiles(); // list of all shared libs
-php80.getFiles(); // list of all related files
+php.getRoot(); // root folder
+php.getComposer(); // composer bin
+php.getPhpFiles(); // list of all PHP files
+php.getPhpModulesFiles(); // list of all PHP modules
+php.getSharedLibsFiles(); // list of all shared libs
+php.getFiles(); // list of all related files
 ```
 
 ## 📝 License
