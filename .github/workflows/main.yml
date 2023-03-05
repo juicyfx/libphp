@@ -17,7 +17,7 @@ jobs:
       - name: Dependencies
         run: |
           npm install
-          npx lerna bootstrap
+          npm run bootstrap
 
       - name: Build
         run: npx lerna run build --stream

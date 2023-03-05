@@ -11,6 +11,6 @@
     "native"
   ],
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^26.1.0"
   }
 }
