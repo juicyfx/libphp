@@ -4,7 +4,7 @@ ENV PHP=php74
 
 RUN yum install -y \
         https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-        https://rpms.remirepo.net/enterprise/remi-release-7.rpm \
+        http://rpms.remirepo.net/enterprise/remi-release-7.rpm \
         yum-utils \
         epel-release \
         curl
