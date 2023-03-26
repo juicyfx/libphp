@@ -50,7 +50,7 @@ RUN yum install -y \
         ${PHP}-php-uuid \
         ${PHP}-php-xml \
         ${PHP}-php-xmlrpc \
-        ${PHP}-php-zip \
+        ${PHP}-php-zip
 
 RUN amazon-linux-extras install postgresql10
 
