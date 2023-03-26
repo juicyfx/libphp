@@ -12,6 +12,7 @@ RUN yum install -y \
 RUN yum-config-manager --enable remi-${PHP}
 RUN yum update -y && yum upgrade -y
 RUN yum -y install patchelf
+RUN yum install -y amazon-linux-extras
 
 RUN yum install -y \
         ${PHP}-php-apcu \
@@ -49,7 +50,9 @@ RUN yum install -y \
         ${PHP}-php-uuid \
         ${PHP}-php-xml \
         ${PHP}-php-xmlrpc \
-        ${PHP}-php-zip 
+        ${PHP}-php-zip
+
+RUN amazon-linux-extras install postgresql10
 
 RUN curl -sS https://getcomposer.org/installer | ${PHP} -- --install-dir=/usr/bin --filename=composer
 
