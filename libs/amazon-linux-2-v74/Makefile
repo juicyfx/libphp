@@ -8,13 +8,14 @@ DIST_LIB_PATH=${DIST_PATH}/lib
 
 DOCKER_IMAGE=libphp/amazon-linux-2-v74
 DOCKER_CONTAINER=libphp-amazon-linux-2-v74
+DOCKER_PLATFORM=linux/amd64
 
 # ######################
 # Building Docker images
 # ######################
 
 build:
-	docker build -t ${DOCKER_IMAGE} -f ./build/Dockerfile ./build
+	docker buildx build --platform ${DOCKER_PLATFORM} -t ${DOCKER_IMAGE} -f ./build/Dockerfile ./build
 
 # #################################################
 # Separate PHP bins + shared libs from Docker image
@@ -31,7 +32,7 @@ dist: build
 	# Remove old PHP container
 	docker rm --force ${DOCKER_CONTAINER} || true
 	# Run new one PHP container
-	docker run -it -d --name ${DOCKER_CONTAINER} ${DOCKER_IMAGE} /bin/bash
+	docker run -it -d --platform ${DOCKER_PLATFORM} --name ${DOCKER_CONTAINER} ${DOCKER_IMAGE} /bin/bash
 
 	# Copy composer, php, php-cgi, php-fpm binaries
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/bin/composer > ${DIST_PHP_PATH}/composer
@@ -113,10 +114,10 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libexslt.so.0 > ${DIST_LIB_PATH}/libexslt.so.0
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libgcrypt.so.11 > ${DIST_LIB_PATH}/libgcrypt.so.11
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libgpg-error.so.0 > ${DIST_LIB_PATH}/libgpg-error.so.0
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicudata.so.71 > ${DIST_LIB_PATH}/libicudata.so.71
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicui18n.so.71 > ${DIST_LIB_PATH}/libicui18n.so.71
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuio.so.71 > ${DIST_LIB_PATH}/libicuio.so.71
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuuc.so.71 > ${DIST_LIB_PATH}/libicuuc.so.71
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicudata.so.73 > ${DIST_LIB_PATH}/libicudata.so.73
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicui18n.so.73 > ${DIST_LIB_PATH}/libicui18n.so.73
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuio.so.73 > ${DIST_LIB_PATH}/libicuio.so.73
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libicuuc.so.73 > ${DIST_LIB_PATH}/libicuuc.so.73
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libidn2.so.0 > ${DIST_LIB_PATH}/libidn2.so.0
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/liblber-2.4.so.2 > ${DIST_LIB_PATH}/liblber-2.4.so.2
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libldap-2.4.so.2 > ${DIST_LIB_PATH}/libldap-2.4.so.2
