@@ -1,4 +1,4 @@
-FROM amazonlinux:2.0.20201218.1-with-sources
+FROM amazonlinux:2.0.20240109.0
 
 ENV PHP=php80
 
