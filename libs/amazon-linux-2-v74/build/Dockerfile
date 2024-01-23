@@ -10,7 +10,7 @@ RUN yum install -y \
         curl
 
 RUN yum-config-manager --enable remi-${PHP}
-RUN yum update -y && yum upgrade -y
+# RUN yum update -y && yum upgrade -y
 RUN yum -y install patchelf
 
 RUN yum install -y \
@@ -18,6 +18,7 @@ RUN yum install -y \
         ${PHP}-php-bcmath \
         ${PHP}-php-brotli \
         ${PHP}-php-cli \
+        ${PHP}-php-curl \
         ${PHP}-php-cgi \
         ${PHP}-php-ds \
         ${PHP}-php-fpm \
