@@ -49,6 +49,8 @@ RUN yum install -y \
         ${PHP}-php-xml \
         ${PHP}-php-xmlrpc
 
+RUN amazon-linux-extras install postgresql14
+
 RUN curl -sS https://getcomposer.org/installer | ${PHP} -- --install-dir=/usr/bin --filename=composer
 
 # $ORIGIN refers to the current directory, don't evaluate it, use the single quotes
