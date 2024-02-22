@@ -158,6 +158,7 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libnssutil3.so > ${DIST_LIB_PATH}/libnssutil3.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libzip.so.5 > ${DIST_LIB_PATH}/libzip.so.5
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libGeoIP.so.1 > ${DIST_LIB_PATH}/libGeoIP.so.1
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libutf8proc.so.1 > ${DIST_LIB_PATH}/libutf8proc.so.1
 
 	# Remove temporary PHP container
 	docker rm --force ${DOCKER_CONTAINER} || true
