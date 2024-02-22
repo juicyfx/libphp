@@ -153,9 +153,9 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libzstd.so.1 > ${DIST_LIB_PATH}/libzstd.so.1
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/liblzf.so.1 > ${DIST_LIB_PATH}/liblzf.so.1
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/liblz4.so.1 > ${DIST_LIB_PATH}/liblz4.so.1
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libnssutil3.so > ${DIST_LIB_PATH}/libnssutil3.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libsnappy.so.1 > ${DIST_LIB_PATH}/libsnappy.so.1
 	# docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libcares.so.2 > ${DIST_LIB_PATH}/libcares.so.2
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libnssutil3.so > ${DIST_LIB_PATH}/libnssutil3.so
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libzip.so.5 > ${DIST_LIB_PATH}/libzip.so.5
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libGeoIP.so.1 > ${DIST_LIB_PATH}/libGeoIP.so.1
 
