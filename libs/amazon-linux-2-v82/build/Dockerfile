@@ -1,4 +1,4 @@
-FROM amazonlinux:2.0.20201218.1-with-sources
+FROM amazonlinux:2.0.20240109.0
 
 ENV PHP=php82
 
@@ -52,7 +52,7 @@ RUN yum install -y \
         ${PHP}-php-xmlrpc \
         ${PHP}-php-zip
 
-RUN amazon-linux-extras install postgresql10
+RUN amazon-linux-extras install postgresql14
 
 RUN curl -sS https://getcomposer.org/installer | ${PHP} -- --install-dir=/usr/bin --filename=composer
 
