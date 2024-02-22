@@ -10,8 +10,9 @@ RUN yum install -y \
         curl
 
 RUN yum-config-manager --enable remi-${PHP}
-# RUN yum update -y && yum upgrade -y
+RUN yum update -y && yum upgrade -y
 RUN yum -y install patchelf
+RUN yum install -y amazon-linux-extras
 
 RUN yum install -y \
         ${PHP}-php-apcu \
