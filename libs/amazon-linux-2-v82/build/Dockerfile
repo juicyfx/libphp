@@ -1,12 +1,12 @@
-FROM amazonlinux:2.0.20240109.0
+FROM amazonlinux:2.0.20240916.0
 
 ENV PHP=php82
 
+RUN amazon-linux-extras install epel -y
+
 RUN yum install -y \
-        https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
         http://rpms.remirepo.net/enterprise/remi-release-7.rpm \
         yum-utils \
-        epel-release \
         curl
 
 RUN yum-config-manager --enable remi-${PHP}
