@@ -52,6 +52,16 @@ RUN yum install -y \
         ${PHP}-php-xmlrpc \
         ${PHP}-php-zip
 
+RUN amazon-linux-extras enable python3 && \
+    yum clean metadata && \
+    yum install -y python3-3.6.* --disablerepo=amzn2-core
+
+RUN curl -L http://mirrors.20i.com/pub/fedora/epel/7/x86_64/Packages/c/capstone-4.0.2-5.el7.x86_64.rpm -o /tmp/capstone.rpm && \
+    rpm -Uvh /tmp/capstone.rpm && \
+    yum install -y python36-capstone
+
+RUN yum install -y ${PHP}-php-opcache --skip-broken
+
 RUN amazon-linux-extras install postgresql14
 
 RUN curl -sS https://getcomposer.org/installer | ${PHP} -- --install-dir=/usr/bin --filename=composer
