@@ -99,7 +99,7 @@ dist: build
 
 	# Copy static libraries. Needed by the extensions above.
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libaom.so.3 > ${DIST_LIB_PATH}/libaom.so.3 || true
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libavif.so.15 > ${DIST_LIB_PATH}/libavif.so.15 || true
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libavif.so.16 > ${DIST_LIB_PATH}/libavif.so.16 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libbrotlicommon.so.1 > ${DIST_LIB_PATH}/libbrotlicommon.so.1 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libbrotlidec.so.1 > ${DIST_LIB_PATH}/libbrotlidec.so.1 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libbrotlienc.so.1 > ${DIST_LIB_PATH}/libbrotlienc.so.1 || true
@@ -140,7 +140,7 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libraqm.so.0 > ${DIST_LIB_PATH}/libraqm.so.0 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/librav1e.so.0 > ${DIST_LIB_PATH}/librav1e.so.0 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libsasl2.so.3 > ${DIST_LIB_PATH}/libsasl2.so.3
-	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libSvtAv1Enc.so.0 > ${DIST_LIB_PATH}/libSvtAv1Enc.so.0 || true
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libSvtAv1Enc.so.2 > ${DIST_LIB_PATH}/libSvtAv1Enc.so.2 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libsodium.so.23 > ${DIST_LIB_PATH}/libsodium.so.23
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libssl.so.3 > ${DIST_LIB_PATH}/libssl.so.3
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libtiff.so.5 > ${DIST_LIB_PATH}/libtiff.so.5 || true
@@ -152,6 +152,7 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libxcb.so.1 > ${DIST_LIB_PATH}/libxcb.so.1 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libXpm.so.4 > ${DIST_LIB_PATH}/libXpm.so.4 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libxslt.so.1 > ${DIST_LIB_PATH}/libxslt.so.1
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libyuv.so.0 > ${DIST_LIB_PATH}/libyuv.so.0 || true
 
 	# Remove temporary PHP container
 	docker rm --force ${DOCKER_CONTAINER} || true
