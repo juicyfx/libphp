@@ -143,6 +143,7 @@ dist: build
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libSvtAv1Enc.so.2 > ${DIST_LIB_PATH}/libSvtAv1Enc.so.2 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libsodium.so.23 > ${DIST_LIB_PATH}/libsodium.so.23
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libssl.so.3 > ${DIST_LIB_PATH}/libssl.so.3
+	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libsystemd.so.0 > ${DIST_LIB_PATH}/libsystemd.so.0
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libtiff.so.5 > ${DIST_LIB_PATH}/libtiff.so.5 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libtokyocabinet.so.9 > ${DIST_LIB_PATH}/libtokyocabinet.so.9 || true
 	docker exec ${DOCKER_CONTAINER} /bin/cat /usr/lib64/libwebp.so.7 > ${DIST_LIB_PATH}/libwebp.so.7 || true
